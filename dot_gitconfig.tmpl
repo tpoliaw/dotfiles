@@ -1,0 +1,27 @@
+[core]
+    editor = nvim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+    wordRegex = "[^[:space:],;]+"
+[rebase]
+    autosquash = true
+    autostash = true
+[alias]
+    uns = restore --staged
+    co = checkout
+    fix = commit --fixup
+[user]
+	email = {{ .email }}
+	name = Peter Holloway
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    syntax-theme = gruvbox-dark
+    paging = always
