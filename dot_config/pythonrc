@@ -1,0 +1,22 @@
+import os
+import atexit
+import readline
+
+history = os.path.join(os.path.expanduser('~'), '.cache', 'python_history')
+try:
+    readline.read_history_file(history)
+except OSError:
+    pass
+
+if readline.get_current_history_length() == 0:
+    readline.add_history('# History created')
+
+def write_history(history):
+    import readline
+    try:
+        readline.write_history_file(history)
+    except OSError:
+        pass
+
+atexit.register(lambda write=write_history, h=history: write(h))
+del os, atexit, readline, history, write_history
