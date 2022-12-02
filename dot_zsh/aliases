@@ -1,0 +1,49 @@
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias ..='cd ..'
+alias cdp='cd -P'
+alias pwd='pwd -P'
+
+alias psef='ps -ef|grep'
+alias rf='readlink -f'
+
+alias tree='exa --tree --git-ignore'
+
+alias cal='python -m calendar'
+
+# Vim
+alias vi='nvim'
+alias vir='nvim -r'
+alias :q='exit'
+
+# git stuff
+alias gs='git status'
+alias dif='git diff'
+alias difs='git diff --staged'
+alias gta='git log --graph --pretty=oneline --abbrev-commit --color=always --all'
+alias lc='git --no-pager log -1 --pretty="%Cgreen%h - %Cblue%ad - %Cred%an%Creset%n%B"'
+alias lcs='lc --stat'
+alias lcd='git show HEAD'
+
+alias groot='cd "$(git rev-parse --show-toplevel)"'
+
+function find_commit() {
+    git log --format='%C(yellow)%h%Creset %s'\
+    |sk --ansi -d '' --preview 'git log -1 -p --stat {1}' --layout=reverse --height '40%' --preview-window 'right:60%:hidden' -b 'ctrl-p:toggle-preview,shift-down:preview-down,shift-up:preview-up' -q "$*"\
+    |cut -d ' ' -f 1
+}
+
+alias -g COM='${$(find_commit):?aborted}'
+
+# Cargo
+
+# Check whether the staged changes will compile on their own
+alias staged='git stash push -quk; cargo check || echo "FAILED"; git stash pop -q --index'
+
+# Gradle
+alias gw='./gradlew'
+
+# tmux
+function tm() {
+    tmux -2 attach -t $@ || tmux -2 new -s $@
+}
