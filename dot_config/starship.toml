@@ -1,0 +1,53 @@
+format = """
+$cmd_duration\
+$username\
+$hostname\
+$shlvl\
+$battery\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$env_var\
+$line_break\
+$character"""
+
+[cmd_duration]
+format = "[took $duration]($style)\n"
+style = "yellow"
+
+[directory]
+truncate_to_repo = false
+truncation_length = 0
+truncation_symbol = "../"
+style = "blue"
+
+[git_branch]
+format = "[\\($branch\\)]($style)"
+style = "red"
+
+[git_status]
+modified = "*"
+style = "red"
+
+[shlvl]
+threshold = 2
+disabled = false
+format = "[(\\($symbol$shlvl\\) )]($style)"
+symbol = "⇅ "
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](purple)"
+
+[username]
+format = "[$user]($style)"
+style_user = "bold white"
+
+[hostname]
+format = "[@$hostname]($style) "
+style = "bold white"
+
+[[battery.display]]
+threshold = 15
+style = "bold red"
