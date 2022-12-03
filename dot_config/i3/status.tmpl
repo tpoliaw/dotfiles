@@ -1,0 +1,45 @@
+theme = "gruvbox-dark"
+icons = "awesome"
+
+[[block]]
+block = "backlight"
+minimum = 15
+maximum = 100
+cycle = [100, 50, 25, 50]
+
+[[block]]
+block = "sound"
+max_vol = 100
+show_volume_when_muted = false
+
+[[block]]
+block = "sound"
+max_vol = 100
+device_kind =  "source"
+show_volume_when_muted = false
+
+[[block]]
+block = "battery"
+
+[[block]]
+block = "time"
+interval = 30
+format = "%a %d/%m %R"
+
+[[block]]
+block = "custom"
+command = "echo "
+on_click = "zenity --question --text 'Suspend?' --default-cancel --title Suspend && systemctl suspend"
+interval = "once"
+
+[[block]]
+block = "custom"
+command = "echo "
+on_click = "zenity --question --text 'Hibernate?' --default-cancel --title Hibernate && systemctl hibernate"
+interval = "once"
+
+[[block]]
+block = "custom"
+command = "echo "
+on_click = "zenity --question --text 'Shutdown?' --default-cancel --title Shutdown && shutdown -P now"
+interval = "once"
