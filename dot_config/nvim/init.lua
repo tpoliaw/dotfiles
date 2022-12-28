@@ -107,4 +107,6 @@ vim.g.gruvbox_material_palette = "original"
 vim.cmd([[colorscheme gruvbox-material]])
 
 -- Load all plugins from lua/plugins.lua
-require("plugins")
+-- require("plugins")
+
+require("config.lazy")
