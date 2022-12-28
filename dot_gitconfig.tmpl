@@ -2,7 +2,7 @@
     editor = nvim
     pager = delta
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter = delta --color-only --features=interactive
 [merge]
     conflictstyle = diff3
 [diff]
@@ -16,12 +16,23 @@
     co = checkout
     fix = commit --fixup
 [user]
-	email = {{ .email }}
-	name = Peter Holloway
-
+    email = {{ .email }}
+    name = Peter Holloway
 [delta]
     navigate = true
     light = false
-    side-by-side = true
+    features = line-numbers decorations
+    side-by-side = false
     syntax-theme = gruvbox-dark
     paging = always
+[delta "interactive"]
+    keep-plus-minus-markers = false
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = box
+[delta "line-numbers"]
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
+    line-numbers-minus-style = 124
+    line-numbers-plus-style = 28
