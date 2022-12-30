@@ -7,7 +7,7 @@ return {
       end,
       config = function()
          require("nvim-treesitter.configs").setup({
-            ensure_installed = { "rust", "lua", "python", "query", "java" },
+            ensure_installed = { "rust", "lua", "python", "query", "bash", "java" },
             sync_install = false,
 
             highlight = {
