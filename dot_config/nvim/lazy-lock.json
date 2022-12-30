@@ -7,6 +7,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "comment.nvim": { "branch": "master", "commit": "45dc21a71ad1450606f5e98261badb28db59d74c" },
+  "dressing.nvim": { "branch": "master", "commit": "4436d6f41e2f6b8ada57588acd1a9f8b3d21453c" },
   "fzf": { "branch": "master", "commit": "44b63363729adfc6f477bedcfb4c7b6a379b948b" },
   "fzf.vim": { "branch": "master", "commit": "fd7fab77b20fdf09180cabdd660d8c3b7fe7ca1a" },
   "gruvbox-material": { "branch": "master", "commit": "3ac46b45892fb4a641c1462947d3b1ad0b283981" },
