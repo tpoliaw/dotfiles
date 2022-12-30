@@ -81,6 +81,18 @@ vim.keymap.set("n", "<leader><BS>", "<cmd>bp|bd#<CR>", { silent = true })
 -- Allow buffers to be hidden without being saved
 vim.opt.hidden = true
 
+-- Copy to the system clipboard using <leader>y
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("x", "<leader>y", "\"+y")
+
+-- Replace text without overwriting last yanked text
+vim.keymap.set("n", "<leader>c", "\"_c")
+vim.keymap.set("x", "<leader>c", "\"_c")
+
+-- Move selected lines and automatically indent
+vim.keymap.set("x", "<M-Up>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("x", "<M-Down>", ":m '>+1<CR>gv=gv")
+
 -- Show the partial command in progress
 vim.opt.showcmd = true
 
