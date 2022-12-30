@@ -38,6 +38,13 @@ return {
    "unblevable/quick-scope",
    -- Macroeditor in splitscreen
    "dohsimpson/vim-macroeditor",
+   -- Visualise history and jump between versions
+   {
+      "mbbill/undotree",
+      config = function()
+         vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+      end,
+   },
    -- Underline instances of the word under the cursor
    "itchyny/vim-cursorword",
    -- Convert between single and multiline constructs
