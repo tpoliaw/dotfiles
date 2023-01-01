@@ -1,13 +1,24 @@
+# Basic shell stuff
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias ..='cd ..'
 alias cdp='cd -P'
 alias pwd='pwd -P'
 
+# pipe all output to devnull
+alias -g NULL='>/dev/null 2>&1'
+
+# if directory doesn't exist, look for wd jump instead
+function cd() { builtin cd $@ NULL || xs $@ }
+
 alias psef='ps -ef|grep'
+
+# See the actual file path after following all links
 alias rf='readlink -f'
 
 alias tree='exa --tree --git-ignore'
+
+alias cm='chezmoi'
 
 alias cal='python -m calendar'
 
@@ -20,6 +31,7 @@ alias :q='exit'
 alias gs='git status'
 alias dif='git diff'
 alias difs='git diff --staged'
+alias gt='git log --graph --pretty=oneline --abbrev-commit --color=always'
 alias gta='git log --graph --pretty=oneline --abbrev-commit --color=always --all'
 alias lc='git --no-pager log -1 --pretty="%Cgreen%h - %Cblue%ad - %Cred%an%Creset%n%B"'
 alias lcs='lc --stat'
