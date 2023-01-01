@@ -3,12 +3,13 @@ $cmd_duration\
 $username\
 $hostname\
 $shlvl\
+{{- if .laptop }}
 $battery\
+{{- end }}
 $directory\
 $git_branch\
 $git_status\
 $git_state\
-$env_var\
 $line_break\
 $character"""
 
@@ -47,7 +48,8 @@ style_user = "bold white"
 [hostname]
 format = "[@$hostname]($style) "
 style = "bold white"
-
+{{ if .laptop }}
 [[battery.display]]
 threshold = 15
 style = "bold red"
+{{ end }}
