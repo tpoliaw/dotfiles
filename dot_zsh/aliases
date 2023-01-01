@@ -9,7 +9,7 @@ alias pwd='pwd -P'
 alias -g NULL='>/dev/null 2>&1'
 
 # if directory doesn't exist, look for wd jump instead
-function cd() { builtin cd $@ NULL || xs $@ }
+function cd() { builtin cd $@ NULL || wd $@ }
 
 alias psef='ps -ef|grep'
 
