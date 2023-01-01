@@ -53,6 +53,8 @@ return {
       init = function()
          vim.g.splitjoin_split_mapping = ""
          vim.g.splitjoin_join_mapping = ""
+      end,
+      config = function()
          vim.keymap.set("n", "<leader>j", "<plug>SplitjoinSplit", { silent = true })
          vim.keymap.set("n", "<leader>k", "<plug>SplitjoinJoin", { silent = true })
       end,
@@ -81,4 +83,20 @@ return {
          -- vim.keymap.set("n", "<leader>a", ":Rg<CR>", { silent = true })
       end,
    },
+   {
+      "folke/trouble.nvim",
+     requires = "kyazdani42/nvim-web-devicons",
+     config = true,
+   },
+   {
+      "folke/todo-comments.nvim",
+      dependencies = "nvim-lua/plenary.nvim",
+      config = true,
+   },
+   {
+      "rcarriga/nvim-notify",
+      config = function()
+         vim.notify = require('notify')
+      end
+   }
 }
