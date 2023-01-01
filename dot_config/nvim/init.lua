@@ -85,6 +85,10 @@ vim.opt.hidden = true
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("x", "<leader>y", "\"+y")
 
+-- Delete text to blackhole register
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("x", "<leader>d", "\"_d")
+
 -- Replace text without overwriting last yanked text
 vim.keymap.set("n", "<leader>c", "\"_c")
 vim.keymap.set("x", "<leader>c", "\"_c")
