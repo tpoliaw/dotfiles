@@ -5,6 +5,9 @@ prop:*.properties
 launch:*.launch
 
 --type-add
+osgi:{MANIFEST.MF, plugin.xml, feature.xml}
+
+--type-add
 eclipse:{*.prefs,.classpath,.project,build.properties}
 
 --type-clear
@@ -13,10 +16,8 @@ java
 --type-add
 java:*.java
 
-{{- if eq .chezmoi.username "qan22331" }}
 --type-add
-zlog:gda-server-2021*log.gz
-{{- end }}
+zlog:*log.gz
 
 --hidden
 
