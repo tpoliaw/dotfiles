@@ -1,6 +1,10 @@
+[user]
+    name = Peter Holloway
+    email = {{ .email }}
 [core]
     editor = nvim
     pager = delta
+    excludesFile = ~/.config/gitignore
 [interactive]
     diffFilter = delta --color-only --features=interactive
 [merge]
@@ -11,13 +15,14 @@
 [rebase]
     autosquash = true
     autostash = true
+[push]
+    default = tracking
+[pull]
+    ff = only
 [alias]
     uns = restore --staged
     co = checkout
     fix = commit --fixup
-[user]
-    email = {{ .email }}
-    name = Peter Holloway
 [delta]
     navigate = true
     light = false
