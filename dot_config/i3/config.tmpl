@@ -194,8 +194,45 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set_from_resource $bg0 i3wm.Color.bg0 #ee0000
+set_from_resource $bg1 i3wm.Color.bg1 #ee0000
+set_from_resource $bg2 i3wm.Color.bg2 #ee0000
+
+set_from_resource $bg4 i3wm.Color.bg4 #ee0000
+set_from_resource $grey i3wm.Color.grey #ee0000
+set_from_resource $fg4 i3wm.Color.fg4 #ee0000
+set_from_resource $fg3 i3wm.Color.fg3 #ee0000
+set_from_resource $fg2 i3wm.Color.fg2 #ee0000
+set_from_resource $fg0 i3wm.Color.fg0 #ee0000
+set_from_resource $urgent i3wm.Color.lightYellow #ee0000
+
+# <class> <border> <background> <text> <indicator> <child_border>
+client.focused          $fg4  $fg2    $bg0 $fg0 $bg4
+client.unfocused        $bg0  $bg2    $fg0 $fg0 $bg0
+client.focused_inactive $grey $fg3    $bg1 $fg0 $bg0
+client.urgent           $grey $urgent $bg0 $fg0 $urgent
+
+client.background #ffffff
+
+default_border pixel 3
+smart_borders on
+
 # Start i3bar to display a workspace bar
 bar {
     status_command i3status-rs ~/.config/i3/status
+    workspace_min_width 90
+    {{- if not .laptop }}
+    position top
+    {{- end }}
     font pango:Iosevka SS14, Font Awesome 6 Free 13
+    colors {
+        background $bg0
+        focused_background $bg2
+
+        # class border background text
+        focused_workspace  $fg4  $fg2    $bg0
+        active_workspace   $grey $fg3    $bg1
+        inactive_workspace $bg2  $bg1    $fg2
+        urgent_workspace   $grey $urgent $bg0
+    }
 }
