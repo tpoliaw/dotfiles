@@ -1,5 +1,6 @@
 configuration {
   modi: "window,drun,ssh,combi";
   combi-modi: "window,drun,ssh";
+  font: "Iosevka SS14 8";
 }
 @theme "gruvbox-dark"
