@@ -116,9 +116,9 @@ vim.api.nvim_set_hl(0, "CursorLine", { ctermbg = 8 })
 
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_palette = "original"
-vim.cmd([[colorscheme gruvbox-material]])
 
 -- Load all plugins from lua/plugins.lua
 -- require("plugins")
 
 require("config.lazy")
+vim.cmd([[colorscheme gruvbox-material]])
