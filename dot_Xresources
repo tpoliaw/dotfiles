@@ -1,0 +1,30 @@
+! gruvbox-dark colours
+i3wm.Color.red: #cc241d
+i3wm.Color.orange: #d65d0e
+i3wm.Color.yellow: #d79921
+i3wm.Color.green: #98971a
+i3wm.Color.blue: #458588
+i3wm.Color.purple: #b16286
+i3wm.Color.aqua: #689d6a
+
+i3wm.Color.lightRed: #fb4934
+i3wm.Color.lightOrange: #fe8819
+i3wm.Color.lightYellow: #fabd2f
+i3wm.Color.lightGreen: #b8bb26
+i3wm.Color.lightBlue: #83a598
+i3wm.Color.lightPurple: #d3869b
+i3wm.Color.lightAqua: #8ec87c
+
+i3wm.Color.bg0: #282828
+i3wm.Color.bg1: #3c3838
+i3wm.Color.bg2: #504945
+i3wm.Color.bg3: #665c54
+i3wm.Color.bg4: #7c6f64
+
+i3wm.Color.grey: #928374
+
+i3wm.Color.fg4: #a89984
+i3wm.Color.fg3: #bdae93
+i3wm.Color.fg2: #d5c4a1
+i3wm.Color.fg1: #ebdbb2
+i3wm.Color.fg0: #fbf1c7
