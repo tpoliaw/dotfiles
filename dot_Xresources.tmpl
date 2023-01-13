@@ -1,8 +1,9 @@
-{{ $dpi:= index . "dpi" }}
+{{- $dpi:= index . "dpi" -}}
 {{- if not (empty $dpi) -}}
 ! Stop text being unreadable
 Xft.dpi: {{ $dpi }}
-{{- end }}
+
+{{ end -}}
 
 ! gruvbox-dark colours
 i3wm.Color.red: #cc241d
