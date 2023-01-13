@@ -118,6 +118,8 @@ vim.opt.background = "dark"
 vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 8 })
 vim.api.nvim_set_hl(0, "CursorLine", { ctermbg = 8 })
 
+vim.opt.termguicolors = true
+
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_palette = "original"
 
