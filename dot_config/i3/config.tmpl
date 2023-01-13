@@ -119,44 +119,41 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
+
+{{/*
+The next few blocks define the workspaces and associated keybindings according
+to however many have been configured in the machine specific toml file.
+There will be an error if there are more than 10 defined.
+
+For each workspace, the following three lines will be added
+set $ws3 "3: Three"
+bindkey $mod+3 workspace $ws3
+bindkey $mod+Shift+3 move container to workspace $ws3
+*/ -}}
+
+{{/* The list and number of workspaces */ -}}
+{{ $wksp := .workspaces }}
+{{- $wkspc := len .workspaces -}}
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Home"
-set $ws2 "2: Dev"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10: Msg"
+{{- range $i := until $wkspc }}
+{{- $w := add $i 1 }}
+set $ws{{ $w }} "{{ $w }}: {{ index $wksp $i }}"
+{{- end }}
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+{{- range $i := until $wkspc }}
+{{- $w := add $i 1 }}
+bindsym $mod+{{ mod $w 10 }} workspace $ws{{ $w }}
+{{- end}}
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+{{- range $i := until $wkspc }}
+{{- $w := add $i 1 }}
+bindsym $mod+Shift+{{ mod $w 10 }} move container to workspace $ws{{ $w }}
+{{- end}}
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -194,8 +191,45 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set_from_resource $bg0 i3wm.Color.bg0 #ee0000
+set_from_resource $bg1 i3wm.Color.bg1 #ee0000
+set_from_resource $bg2 i3wm.Color.bg2 #ee0000
+
+set_from_resource $bg4 i3wm.Color.bg4 #ee0000
+set_from_resource $grey i3wm.Color.grey #ee0000
+set_from_resource $fg4 i3wm.Color.fg4 #ee0000
+set_from_resource $fg3 i3wm.Color.fg3 #ee0000
+set_from_resource $fg2 i3wm.Color.fg2 #ee0000
+set_from_resource $fg0 i3wm.Color.fg0 #ee0000
+set_from_resource $urgent i3wm.Color.lightYellow #ee0000
+
+# <class> <border> <background> <text> <indicator> <child_border>
+client.focused          $fg4  $fg2    $bg0 $fg0 $bg4
+client.unfocused        $bg0  $bg2    $fg0 $fg0 $bg0
+client.focused_inactive $grey $fg3    $bg1 $fg0 $bg0
+client.urgent           $grey $urgent $bg0 $fg0 $urgent
+
+client.background #ffffff
+
+default_border pixel 3
+smart_borders on
+
 # Start i3bar to display a workspace bar
 bar {
     status_command i3status-rs ~/.config/i3/status
+    workspace_min_width 90
+    {{- if not .laptop }}
+    position top
+    {{- end }}
     font pango:Iosevka SS14, Font Awesome 6 Free 13
+    colors {
+        background $bg0
+        focused_background $bg2
+
+        # class border background text
+        focused_workspace  $fg4  $fg2    $bg0
+        active_workspace   $grey $fg3    $bg1
+        inactive_workspace $bg2  $bg1    $fg2
+        urgent_workspace   $grey $urgent $bg0
+    }
 }

@@ -1,0 +1,57 @@
+local wezterm = require("wezterm")
+return {
+  color_scheme = "Gruvbox Dark",
+  -- Why would a terminal making a noise be a good idea?
+  audible_bell = "Disabled",
+  -- While there is a bug in 20220624
+  check_for_updates = false,
+  show_update_window = false,
+  font = wezterm.font_with_fallback({
+    "Iosevka SS14",
+    "Font Awesome 6 Free",
+  }),
+  font_size = 12,
+  -- Don't prevent the window closing when the final command failed
+  exit_behavior = "Close",
+  -- When increasing the size of font, reduce the row/column count instead
+  -- of trying to resize the window (which fails in i3)
+  adjust_window_size_when_changing_font_size = false,
+  enable_tab_bar = false,
+  -- Launch menu isn't shown when the tab bar is enabled, but if it was...
+  launch_menu = {
+    {
+      args = { "btm" },
+    },
+  },
+  window_padding = {
+    left = 5,
+    right = 0,
+    top = 0,
+    bottom = 0,
+  },
+  -- Enable additional features in applications that support them
+  term = "wezterm",
+  -- Set double clicking to not select :; characters
+  selection_word_boundary = " \t\n{}[]()\"'`,:;",
+  -- {{ if eq .chezmoi.username "qan22331" }}
+  hyperlink_rules = {
+    {
+      -- Jira tickets
+      regex = "[A-Z0-9_]+-\\d+",
+      format = "https://jira.diamond.ac.uk/browse/$0",
+    },
+    {
+      -- Match gerrit change ids and map to a query. Can't link directly
+      -- to change as id is not unique (across cherry-picks etc)
+      regex = "Change-Id: (I[a-f0-9]{40})",
+      format = "https://gerrit.diamond.ac.uk/q/change:$1",
+    },
+  },
+  -- {{ end }}
+  keys = {
+    -- Disable the default Ctrl-PageUp/Down keys so that they can be used in tmux
+    -- Default in wezterm is switch tabs which I don't use
+    { key = "PageUp", mods = "CTRL", action = "DisableDefaultAssignment" },
+    { key = "PageDown", mods = "CTRL", action = "DisableDefaultAssignment" },
+  },
+}

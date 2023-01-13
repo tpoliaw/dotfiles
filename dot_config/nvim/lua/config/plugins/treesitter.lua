@@ -2,9 +2,6 @@ return {
    -- Syntax awareness
    {
       "nvim-treesitter/nvim-treesitter",
-      build = function()
-         vim.fn([[TSInstall<CR>]])
-      end,
       config = function()
          require("nvim-treesitter.configs").setup({
             ensure_installed = { "rust", "lua", "python", "query", "bash", "java" },
