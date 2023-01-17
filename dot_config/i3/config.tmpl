@@ -57,6 +57,10 @@ bindsym --release $mod+m exec --no-startup-id xdotool key --clearmodifiers Shift
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Move windows to and from the scratch pad
+bindsym $mod+Shift+Tab move scratchpad
+bindsym $mod+Tab scratchpad show
+
 # start a terminal
 bindsym $mod+Return exec $terminal
 
