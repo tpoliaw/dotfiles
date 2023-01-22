@@ -74,15 +74,11 @@ return {
    {
       "junegunn/fzf.vim",
       dependencies = {
-         {
-            "junegunn/fzf",
-            build = "<cmd>fzf#install()<CR>",
-         },
+         "junegunn/fzf",
       },
       config = function()
          vim.keymap.set("n", "<leader>e", ":Files<CR>", { silent = true })
          vim.keymap.set("n", "<leader>b", ":Buffers<CR>", { silent = true })
-         -- vim.keymap.set("n", "<leader>a", ":Rg<CR>", { silent = true })
       end,
    },
    {
