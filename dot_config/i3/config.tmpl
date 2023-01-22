@@ -159,6 +159,10 @@ bindsym $mod+{{ mod $w 10 }} workspace $ws{{ $w }}
 bindsym $mod+Shift+{{ mod $w 10 }} move container to workspace $ws{{ $w }}
 {{- end}}
 
+# Move the current workspace to other monitor
+bindsym Shift+mod1+$mod+Left move workspace to output left
+bindsym Shift+mod1+$mod+Right move workspace to output right
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
