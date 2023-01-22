@@ -4,6 +4,9 @@
 
 # Windows key as main mod key
 set $mod Mod4
+# Alias other modifier keys
+set $alt Mod1
+
 set $terminal {{ .terminal.bin }}
 set $term-exec {{ .terminal.exec }}
 
@@ -17,7 +20,7 @@ exec --no-startup-id ~/.config/i3/fehbg
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -ueft -c 586e75
-bindsym $mod+Mod1+l exec i3lock -c 586e75 --nofork -euft
+bindsym $mod+$alt+l exec i3lock -c 586e75 --nofork -euft
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -70,7 +73,7 @@ bindsym $mod+p exec $term-exec ptpython
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym mod1+F2 exec rofi -modi drun -show drun -dpi 192
+bindsym $alt+F2 exec rofi -modi drun -show drun -dpi 192
 
 # Don't change focus when the mouse moves
 focus_follows_mouse no
@@ -160,8 +163,8 @@ bindsym $mod+Shift+{{ mod $w 10 }} move container to workspace $ws{{ $w }}
 {{- end}}
 
 # Move the current workspace to other monitor
-bindsym Shift+mod1+$mod+Left move workspace to output left
-bindsym Shift+mod1+$mod+Right move workspace to output right
+bindsym Shift+$alt+$mod+Left move workspace to output left
+bindsym Shift+$alt+$mod+Right move workspace to output right
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
