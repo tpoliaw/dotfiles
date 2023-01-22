@@ -66,6 +66,8 @@ return {
       cmd = "MindOpenMain",
       dependencies = "nvim-lua/plenary.nvim",
    },
+   -- Show registers after pressing ", @ or Ctrl-r
+   "junegunn/vim-peekaboo",
    -- Colorscheme
    "sainnhe/gruvbox-material",
    -- fuzzy finding
