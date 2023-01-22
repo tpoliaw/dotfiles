@@ -62,7 +62,12 @@ return {
    -- Outliner/tree
    {
       "phaazon/mind.nvim",
-      config = true,
+      config = {
+         edit = {
+            data_extension = ".norg",
+            data_header = "* %s",
+         }
+      },
       cmd = "MindOpenMain",
       dependencies = "nvim-lua/plenary.nvim",
    },
