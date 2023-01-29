@@ -126,8 +126,10 @@ zstyle ':completion::complete:*' cache-path ${ZSH}/.cache
 
 # Generate new ~/.config/zr.zsh if it does not exist or if ~/.zshrc has been changed
 if [[ ! -f ~/.cache/zr.zsh ]] || [[ ~/.zshrc -nt ~/.cache/zr.zsh ]]; then
+  echo 'Refreshing plugin list'
   zr \
     junegunn/fzf.git/shell/key-bindings.zsh \
+    junegunn/fzf.git/shell/completion.zsh \
     zsh-users/zsh-syntax-highlighting\
     Tarrasch/zsh-bd\
     mfaerevaag/wd\
@@ -140,6 +142,7 @@ source ~/.cache/zr.zsh
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_DEFAULT_COMMAND="fd --hidden -I --exclude='.git'"
 export FZF_CTRL_T_COMMAND="fd --hidden -I --exclude='.git'"
+export FZF_ALT_C_COMMAND="fd -td --hidden -I --exclude='.git'"
 export FZF_COMPLETION_TRIGGER='##'
 bindkey '^@' fzf-file-widget
 
