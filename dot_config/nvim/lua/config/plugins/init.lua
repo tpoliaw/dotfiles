@@ -71,8 +71,6 @@ return {
       cmd = "MindOpenMain",
       dependencies = "nvim-lua/plenary.nvim",
    },
-   -- Show registers after pressing ", @ or Ctrl-r
-   "junegunn/vim-peekaboo",
    -- Colorscheme
    "sainnhe/gruvbox-material",
    -- fuzzy finding
@@ -101,5 +99,15 @@ return {
       config = function()
          vim.notify = require('notify')
       end
-   }
+   },
+   -- Show keybindings when first keys are pressed
+   {
+      "folke/which-key.nvim",
+      config = function()
+         vim.o.timeout = true
+         vim.o.timeoutlen = 300
+         require("which-key").setup({
+         })
+      end,
+   },
 }
