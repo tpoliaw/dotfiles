@@ -23,6 +23,9 @@ return {
             },
          })
       end,
+      dependencies = {
+         "nvim-neorg/neorg",
+      }
    },
    -- Syntax aware text objects
    "nvim-treesitter/nvim-treesitter-textobjects",
