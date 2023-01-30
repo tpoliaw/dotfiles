@@ -45,8 +45,8 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl prev
 {{ if .laptop }}
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo xbacklight -5
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo xbacklight +5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +5
 {{ end }}
 # Take screenshots
 # print-screen => saves full screen
