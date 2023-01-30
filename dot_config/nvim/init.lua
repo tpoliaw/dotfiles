@@ -120,8 +120,5 @@ vim.opt.termguicolors = true
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_palette = "original"
 
--- Load all plugins from lua/plugins.lua
--- require("plugins")
-
 require("config.lazy")
 vim.cmd([[colorscheme gruvbox-material]])
