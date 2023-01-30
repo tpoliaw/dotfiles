@@ -114,10 +114,7 @@ vim.opt.completeopt = { "menu", "menuone", "noinsert", "noselect" }
 -- Make themes expect a dark background
 vim.opt.background = "dark"
 
--- Adjust highlighting for common non-theme things
-vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 8 })
-vim.api.nvim_set_hl(0, "CursorLine", { ctermbg = 8 })
-
+-- Don't restrict highlighting to 256 colours
 vim.opt.termguicolors = true
 
 vim.g.gruvbox_material_background = "hard"
