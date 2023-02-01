@@ -111,6 +111,10 @@ vim.opt.wildmode = "longest:full,full"
 -- noselect - don't select the first match automatically
 vim.opt.completeopt = { "menu", "menuone", "noinsert", "noselect" }
 
+-- spell check everything - may be restricted to prose if it gets annoying
+vim.opt.spell = true
+vim.opt.spelllang = "en_gb"
+
 -- Make themes expect a dark background
 vim.opt.background = "dark"
 
