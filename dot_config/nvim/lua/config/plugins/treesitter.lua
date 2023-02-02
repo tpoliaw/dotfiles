@@ -25,7 +25,15 @@ return {
       end,
       dependencies = {
          "nvim-neorg/neorg",
-      }
+      },
+   },
+   -- Hop but by treesitter nodes
+   {
+      "mfussenegger/nvim-treehopper",
+      config = function()
+         vim.keymap.set("o", "m", [[:lua require("tsht").nodes()<CR>]], { noremap = false, silent = true })
+         vim.keymap.set("x", "m", [[:lua require("tsht").nodes()<CR>]], { silent = true })
+      end,
    },
    -- Syntax aware text objects
    "nvim-treesitter/nvim-treesitter-textobjects",
