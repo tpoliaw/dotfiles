@@ -1,6 +1,9 @@
 return {
    -- Surround text objects with quotes/brackets/etc
-   "tpope/vim-surround",
+   {
+      "kylechui/nvim-surround",
+      config = true,
+   },
    -- Let plugin actions be treated as single actions
    "tpope/vim-repeat",
    -- Lua based commenting
