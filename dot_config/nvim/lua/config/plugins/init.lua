@@ -92,10 +92,17 @@ return {
      requires = "kyazdani42/nvim-web-devicons",
      config = true,
    },
+   -- Highlight and markout TODO comments
    {
       "folke/todo-comments.nvim",
       dependencies = "nvim-lua/plenary.nvim",
-      config = true,
+      opts = {
+         -- Show todo comments in the sign column but don't highlight the text
+         highlight = {
+            keyword = "",
+            after = "",
+         },
+      },
    },
    {
       "rcarriga/nvim-notify",
