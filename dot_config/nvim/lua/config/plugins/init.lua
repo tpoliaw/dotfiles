@@ -132,4 +132,14 @@ return {
          vim.keymap.set("n", "<leader>o", "<cmd>AerialToggle<CR>")
       end
    },
+   {
+     "m4xshen/smartcolumn.nvim",
+     opts = {
+        colorcoumn = { 80 },
+        scope = "window",
+        custom_colorcolumn = {
+           gitcommit = { 72, 80 },
+        },
+     }
+   },
 }
