@@ -22,28 +22,18 @@ function M.config()
    vim.keymap.set("n", "<leader>]", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 
    local function on_attach(client, bufnum)
-      local opts = { noremap = true, silent = true }
-
-      local keymap = function(buf)
-         local map = function(key, func)
-            local opts = { noremap = true, silent = true, buffer = buf }
-            vim.keymap.set("n", key, func, opts)
-         end
-         return map
-      end
-
       -- Enable completions triggered by <C-x><C-o>
       vim.api.nvim_buf_set_option(bufnum, "omnifunc", "v:lua.vim.lsp.omnifunc")
-      local keymap = keymap(buffnum)
+      local opts = { noremap = true, silent = true, buffer = buf }
       -- Key mappings
-      keymap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-      keymap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-      keymap("gtd", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-      keymap("gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-      keymap("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-      keymap("<c-k>", "<cmd>lua vim.lsp.buf.hover()<CR>")
-      keymap("<leader>1", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-      keymap("<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
+      vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+      vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+      vim.keymap.set("n", "gtd", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+      vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+      vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+      vim.keymap.set("n", "<c-k>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+      vim.keymap.set({"n", "x"}, "<leader>1", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+      vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
    end
    local caps = vim.lsp.protocol.make_client_capabilities()
    caps = require("cmp_nvim_lsp").default_capabilities(caps)
