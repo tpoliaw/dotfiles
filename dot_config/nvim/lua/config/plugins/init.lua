@@ -22,7 +22,7 @@ return {
    {
       "cappyzawa/trim.nvim",
       config = {
-         disable = { "diff" },
+         ft_blocklist = { "diff" },
          patterns = {
             -- default patterns remove duplicate newlines
             [[%s/\s\+$//e]],
