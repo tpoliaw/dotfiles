@@ -137,6 +137,7 @@ return {
      opts = {
         colorcoumn = { 80 },
         scope = "window",
+        disabled_filetypes = {},
         custom_colorcolumn = {
            gitcommit = { 72, 80 },
         },
