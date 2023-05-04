@@ -6,6 +6,7 @@ $shlvl\
 {{- if .laptop }}
 $battery\
 {{- end }}
+$python\
 $directory\
 $git_branch\
 $git_status\
@@ -52,4 +53,9 @@ style = "bold white"
 [[battery.display]]
 threshold = 15
 style = "bold red"
-{{ end }}
+{{- end }}
+
+[python]
+format = '[(${version} )(\($virtualenv\) )]($style)'
+detect_extensions = []
+detect_files = []
