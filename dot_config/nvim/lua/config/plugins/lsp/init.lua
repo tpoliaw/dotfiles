@@ -42,6 +42,11 @@ function M.config()
       lineFoldingOnly = true,
    }
 
+   require("lspconfig")["pyright"].setup({
+      on_attach = on_attach,
+      capabilities = caps,
+   })
+
    require("lspconfig")["rust_analyzer"].setup({
       on_attach = on_attach,
       capabilities = caps,
