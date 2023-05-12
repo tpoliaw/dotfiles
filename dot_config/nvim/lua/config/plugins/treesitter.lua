@@ -36,7 +36,24 @@ return {
       end,
    },
    -- Syntax aware text objects
-   "nvim-treesitter/nvim-treesitter-textobjects",
+   {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      config = function()
+         require("nvim-treesitter.configs").setup({
+            textobjects = {
+               swap = {
+                  enable = true,
+                  swap_next = {
+                     ["<leader>a"] = "@parameter.inner",
+                  },
+                  swap_previous = {
+                     ["<leader>A"] = "@parameter.inner",
+                  },
+               },
+            },
+         })
+      end,
+   },
    -- debug help for treesitter
    "nvim-treesitter/playground",
 }
