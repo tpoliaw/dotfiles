@@ -21,6 +21,7 @@ alias tree='exa --tree --git-ignore'
 alias cm='chezmoi'
 
 alias cal='python -m calendar'
+alias pm='python -m'
 
 # Vim
 alias vi='nvim'
