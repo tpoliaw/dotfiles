@@ -48,6 +48,7 @@ return {
       regex = "Change-Id: (I[a-f0-9]{40})",
       format = "https://gerrit.diamond.ac.uk/q/change:$1",
     },
+    table.unpack(wezterm.default_hyperlink_rules())
   },
   -- {{ end }}
   keys = {
