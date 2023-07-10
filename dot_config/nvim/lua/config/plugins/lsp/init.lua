@@ -34,6 +34,7 @@ function M.config()
       vim.keymap.set("n", "<c-k>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
       vim.keymap.set({"n", "x"}, "<leader>1", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
       vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+      vim.keymap.set("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
    end
    local caps = vim.lsp.protocol.make_client_capabilities()
    caps = require("cmp_nvim_lsp").default_capabilities(caps)
