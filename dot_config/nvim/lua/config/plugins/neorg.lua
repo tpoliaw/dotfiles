@@ -5,9 +5,9 @@ return {
    opts = {
       load = {
          ["core.defaults"] = {}, -- Loads default behaviour
-         ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-         ["core.norg.dirman"] = {},
-         ["core.norg.completion"] = {
+         ["core.concealer"] = {}, -- Adds pretty icons to your documents
+         ["core.dirman"] = {},
+         ["core.completion"] = {
             config = {
                engine = "nvim-cmp",
             },
