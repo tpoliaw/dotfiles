@@ -30,7 +30,7 @@ function M.config()
       },
       window = {
          completion = cmp.config.window.bordered(),
-         documentation = cmp.config.window.bordered(),
+         documentation = cmp.config.disable,
       },
       mapping = cmp.mapping.preset.insert({
          -- 'complete' is to start completion, no to complete selection
