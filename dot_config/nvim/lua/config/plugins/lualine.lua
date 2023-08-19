@@ -2,7 +2,7 @@
 return {
    "nvim-lualine/lualine.nvim",
    dependencies = "kyazdani42/nvim-web-devicons",
-   config = {
+   opts = {
       theme = "gruvbox-material",
       options = {
          icons_enabled = true,

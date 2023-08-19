@@ -1,6 +1,6 @@
 return {
    "stevearc/dressing.nvim",
-   config = {
+   opts = {
       input = {
          win_options = {
             winblend = 0, -- don't try to make window transparent

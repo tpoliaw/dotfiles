@@ -9,7 +9,7 @@ return {
    -- Lua based commenting
    {
       "numToStr/comment.nvim",
-      config = {
+      opts = {
          mappings = {
             basic = true,
             extra = true,
@@ -21,7 +21,7 @@ return {
    -- Remove trailing whitespace
    {
       "cappyzawa/trim.nvim",
-      config = {
+      opts = {
          ft_blocklist = { "diff" },
          patterns = {
             -- default patterns remove duplicate newlines
@@ -65,7 +65,7 @@ return {
    -- Outliner/tree
    {
       "phaazon/mind.nvim",
-      config = {
+      opts = {
          edit = {
             data_extension = ".norg",
             data_header = "* %s",
@@ -89,7 +89,7 @@ return {
    },
    {
       "folke/trouble.nvim",
-     requires = "kyazdani42/nvim-web-devicons",
+     dependencies = "kyazdani42/nvim-web-devicons",
      config = true,
    },
    -- Highlight and markout TODO comments
