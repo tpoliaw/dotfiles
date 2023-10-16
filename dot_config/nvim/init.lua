@@ -12,6 +12,7 @@ local restore_cursor = function()
    if ft ~= "gitcommit" and vim.fn.line("'\"") <= vim.fn.line("$") then
       vim.cmd([[normal! g`"]])
    end
+   vim.cmd([[normal zR]])
 end
 
 local restore_group = vim.api.nvim_create_augroup("restore_group", {})
@@ -97,6 +98,10 @@ vim.keymap.set("x", "<leader>c", "\"_c")
 -- Move selected lines and automatically indent
 vim.keymap.set("x", "<M-Up>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "<M-Down>", ":m '>+1<CR>gv=gv")
+
+-- Fold code by syntax blocks
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Show the partial command in progress
 vim.opt.showcmd = true
