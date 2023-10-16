@@ -8,7 +8,8 @@ vim.opt.relativenumber = true
 
 -- Move to the cursor position last time the buffer was closed
 local restore_cursor = function()
-   if vim.fn.line("'\"") <= vim.fn.line("$") then
+   ft = vim.bo.filetype
+   if ft ~= "gitcommit" and vim.fn.line("'\"") <= vim.fn.line("$") then
       vim.cmd([[normal! g`"]])
    end
 end
