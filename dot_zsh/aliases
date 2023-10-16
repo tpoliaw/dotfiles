@@ -47,6 +47,7 @@ function find_commit() {
 }
 
 alias -g COM='${$(find_commit):?aborted}'
+alias -g NO_GH='--shallow-exclude=gh-pages'
 
 # Cargo
 
