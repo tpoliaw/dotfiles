@@ -56,4 +56,14 @@ return {
    },
    -- debug help for treesitter
    "nvim-treesitter/playground",
+   {
+      "mizlan/iswap.nvim",
+      config = function()
+         require("iswap").setup({
+            move_cursor = true,
+         })
+         vim.keymap.set("n", "<leader>s", [[:ISwapWithRight<CR>]], { noremap = false, silent = true })
+         vim.keymap.set("n", "<leader>S", [[:ISwapWithLeft<CR>]], { noremap = false, silent = true })
+      end,
+   },
 }
