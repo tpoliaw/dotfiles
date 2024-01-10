@@ -19,6 +19,9 @@ export WORDCHARS=''
 bindkey '^[[3;5~' delete-word
 # Ctrl-bksp deletes word
 bindkey '^H' backward-delete-word
+# Match bash behaviour for deleting current - delete from cursor to start of line
+# instead of deleting the whole line
+bindkey '^U' backward-kill-line
 
 # start typing + [Up-Arrow] - fuzzy find history forward
 autoload -U up-line-or-beginning-search
