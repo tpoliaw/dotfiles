@@ -149,6 +149,12 @@ export FZF_ALT_C_COMMAND="fd -td --hidden -I --exclude='.git'"
 export FZF_COMPLETION_TRIGGER='##'
 bindkey '^@' fzf-file-widget
 
+if type atuin > /dev/null; then
+    eval "$(atuin init zsh --disable-up-arrow)"
+else
+    echo "Install atuin"
+fi
+
 #########################################################
 #                   Assorted functions                  #
 #########################################################
