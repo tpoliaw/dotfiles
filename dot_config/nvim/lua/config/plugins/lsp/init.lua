@@ -39,7 +39,7 @@ function M.config()
    local caps = vim.lsp.protocol.make_client_capabilities()
    caps = require("cmp_nvim_lsp").default_capabilities(caps)
    caps.textDocument.foldingRange = {
-      dynamicRegistration = false,
+      dynamicRegistration = true,
       lineFoldingOnly = true,
    }
 
