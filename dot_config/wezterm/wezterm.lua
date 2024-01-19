@@ -9,6 +9,19 @@ wezterm.on("update-status", function(window, pane)
   window:set_config_overrides(overrides)
 end)
 
+hyperlink_rules = wezterm.default_hyperlink_rules()
+table.insert(hyperlink_rules, {
+  -- Jira tickets
+  regex = "[A-Z]+[0-9_]*-\\d+",
+  format = "https://jira.diamond.ac.uk/browse/$0",
+})
+table.insert(hyperlink_rules, {
+  -- Match gerrit change ids and map to a query. Can't link directly
+  -- to change as id is not unique (across cherry-picks etc)
+  regex = "Change-Id: (I[a-f0-9]{40})",
+  format = "https://gerrit.diamond.ac.uk/q/change:$1",
+})
+
 return {
   color_scheme = "GruvboxDark",
   -- Why would a terminal making a noise be a good idea?
@@ -47,22 +60,7 @@ return {
   term = "wezterm",
   -- Set double clicking to not select :; characters
   selection_word_boundary = " \t\n{}[]()\"'`,:;",
-  -- {{ if eq .chezmoi.username "qan22331" }}
-  hyperlink_rules = {
-    {
-      -- Jira tickets
-      regex = "[A-Z0-9_]+-\\d+",
-      format = "https://jira.diamond.ac.uk/browse/$0",
-    },
-    {
-      -- Match gerrit change ids and map to a query. Can't link directly
-      -- to change as id is not unique (across cherry-picks etc)
-      regex = "Change-Id: (I[a-f0-9]{40})",
-      format = "https://gerrit.diamond.ac.uk/q/change:$1",
-    },
-    table.unpack(wezterm.default_hyperlink_rules())
-  },
-  -- {{ end }}
+  hyperlink_rules = hyperlink_rules,
   keys = {
     -- Disable the default Ctrl-PageUp/Down keys so that they can be used in tmux
     -- Default in wezterm is switch tabs which I don't use
