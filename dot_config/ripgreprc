@@ -19,6 +19,9 @@ java:*.java
 --type-add
 zlog:*log.gz
 
+--type-add
+git:.gitignore
+
 --hidden
 
 --glob
