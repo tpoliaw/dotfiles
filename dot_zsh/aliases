@@ -24,6 +24,7 @@ alias cal='python -m calendar'
 alias pm='python -m'
 
 # Vim
+alias nv='nvim'
 alias vi='nvim'
 alias vir='nvim -r'
 alias :q='exit'
