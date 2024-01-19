@@ -69,7 +69,7 @@ return {
          edit = {
             data_extension = ".norg",
             data_header = "* %s",
-         }
+         },
       },
       cmd = "MindOpenMain",
       dependencies = "nvim-lua/plenary.nvim",
@@ -89,8 +89,8 @@ return {
    },
    {
       "folke/trouble.nvim",
-     dependencies = "kyazdani42/nvim-web-devicons",
-     config = true,
+      dependencies = "kyazdani42/nvim-web-devicons",
+      config = true,
    },
    -- Highlight and markout TODO comments
    {
@@ -119,8 +119,8 @@ return {
    {
       "rcarriga/nvim-notify",
       config = function()
-         vim.notify = require('notify')
-      end
+         vim.notify = require("notify")
+      end,
    },
    -- Show keybindings when first keys are pressed
    {
@@ -128,8 +128,7 @@ return {
       config = function()
          vim.o.timeout = true
          vim.o.timeoutlen = 300
-         require("which-key").setup({
-         })
+         require("which-key").setup({})
       end,
    },
    {
@@ -139,25 +138,25 @@ return {
             on_attach = function(bufnum)
                vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnum })
                vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnum })
-            end
+            end,
          })
          vim.keymap.set("n", "<leader>o", "<cmd>AerialToggle<CR>")
-      end
+      end,
    },
    {
-     "m4xshen/smartcolumn.nvim",
-     opts = {
-        colorcoumn = { 80 },
-        scope = "window",
-        disabled_filetypes = {},
-        custom_colorcolumn = {
-           gitcommit = { 72, 80 },
-        },
-     }
+      "m4xshen/smartcolumn.nvim",
+      opts = {
+         colorcoumn = { 80 },
+         scope = "window",
+         disabled_filetypes = {},
+         custom_colorcolumn = {
+            gitcommit = { 72, 80 },
+         },
+      },
    },
    {
-    'windwp/nvim-autopairs',
-       event = "InsertEnter",
-       opts = {}
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      opts = {}, -- this is equalent to setup({}) function
    },
 }

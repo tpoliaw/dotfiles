@@ -32,7 +32,7 @@ function M.config()
       vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
       vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
       vim.keymap.set("n", "<c-k>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-      vim.keymap.set({"n", "x"}, "<leader>1", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+      vim.keymap.set({ "n", "x" }, "<leader>1", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
       vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
       vim.keymap.set("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
    end

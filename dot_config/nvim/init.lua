@@ -84,16 +84,16 @@ vim.keymap.set("n", "<leader><BS>", "<cmd>bp|bd#<CR>", { silent = true })
 vim.opt.hidden = true
 
 -- Copy to the system clipboard using <leader>y
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("x", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("x", "<leader>y", '"+y')
 
 -- Delete text to blackhole register
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("x", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("x", "<leader>d", '"_d')
 
 -- Replace text without overwriting last yanked text
-vim.keymap.set("n", "<leader>c", "\"_c")
-vim.keymap.set("x", "<leader>c", "\"_c")
+vim.keymap.set("n", "<leader>c", '"_c')
+vim.keymap.set("x", "<leader>c", '"_c')
 
 -- Move selected lines and automatically indent
 vim.keymap.set("x", "<M-Up>", ":m '<-2<CR>gv=gv")
