@@ -99,8 +99,20 @@ return {
       opts = {
          -- Show todo comments in the sign column but don't highlight the text
          highlight = {
+            pattern = {
+               [[.*<(KEYWORDS)\s*:]],
+               [[.*<(KEYWORDS)\s*!\(]],
+            },
             keyword = "",
             after = "",
+            comments_only = false,
+         },
+         keywords = {
+            TODO = { alt = { "todo", "unimplemented" } },
+         },
+         -- merge_keywords = true,
+         search = {
+            pattern = [[\b(KEYWORDS)(:|!\()]],
          },
       },
    },
