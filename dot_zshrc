@@ -193,5 +193,13 @@ if [[ -f ~/.zsh/aliases ]] {
     source ~/.zsh/aliases
 }
 
+# Configure pyenv
+if type -f pyenv > /dev/null; then
+    eval "$(pyenv init -)"
+else
+    echo "Install pyenv"
+fi
+
+
 # Rest of prompt config is in ~/.config/starship.toml
 eval "$(starship init zsh)"
