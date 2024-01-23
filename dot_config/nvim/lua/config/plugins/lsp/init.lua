@@ -49,6 +49,9 @@ function M.config()
    })
 
    require("lspconfig")["rust_analyzer"].setup({
+      on_init = function(client, _)
+         client.server_capabilities.semanticTokensProvider = nil -- turn off semantic tokens
+      end,
       on_attach = on_attach,
       capabilities = caps,
       flags = {
