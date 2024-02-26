@@ -62,6 +62,16 @@ function M.config()
          command = "clippy",
          extraArgs = { "--no-deps" },
       },
+      settings = {
+         ["rust-analyzer"] = {
+            rustfmt = {
+               extraArgs = { "+nightly" },
+               rangeFormatting = {
+                  enable = true,
+               },
+            },
+         },
+      }
    })
 end
 
