@@ -51,6 +51,9 @@ alias -g COM='${$(find_commit):?aborted}'
 alias -g NO_GH='--shallow-exclude=gh-pages'
 
 # Cargo
+alias cr='cargo run'
+alias crr='cargo run --release'
+alias cf='cargo +nightly fmt'
 
 # Check whether the staged changes will compile on their own
 alias staged='git stash push -quk; cargo check || echo "FAILED"; git stash pop -q --index'
