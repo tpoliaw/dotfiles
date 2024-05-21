@@ -62,8 +62,6 @@ vim.opt.shiftwidth = 4
 
 -- Add shortcut to make terminal (slightly more) copy friendly
 vim.keymap.set("n", "<F7>", "<cmd> set nu! rnu! list!<CR>", { silent = true })
--- And one to make pasting behave
-vim.opt.pastetoggle = "<F2>"
 
 -- Highlight the current line
 vim.opt.cursorline = true
