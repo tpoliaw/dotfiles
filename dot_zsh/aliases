@@ -53,6 +53,7 @@ alias -g NO_GH='--shallow-exclude=gh-pages'
 # Cargo
 alias cr='cargo run'
 alias crr='cargo run --release'
+alias crb='cargo run --bin'
 alias cf='cargo +nightly fmt'
 
 # Check whether the staged changes will compile on their own
