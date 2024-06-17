@@ -16,6 +16,7 @@ function M.config()
    local select_opts = { behavior = cmp.SelectBehavior.Insert }
 
    cmp.setup({
+      preselect = cmp.PreselectMode.None,
       completion = {
          -- menu: use a popup menu to display options
          -- menuone: still use a popup if there's only one option
