@@ -13,7 +13,7 @@ return {
          },
          lualine_x = {
             { "filetype", colored = true },
-            "encoding",
+            "encoding", "fileformat"
          },
          lualine_y = { "diagnostics" },
          lualine_z = { "progress", "location" },
