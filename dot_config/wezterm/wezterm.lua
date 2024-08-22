@@ -1,11 +1,13 @@
 local wezterm = require("wezterm")
 wezterm.on("update-status", function(window, pane)
   local overrides = window:get_config_overrides() or {}
+  overrides.colors = window:effective_config().colors
   if window:is_focused() then
-    overrides.colors = {}
+    overrides.colors["background"] = nil
   else
-    overrides.colors = { background = "#3c3838" }
+    overrides.colors["background"] = "#3c3838"
   end
+
   window:set_config_overrides(overrides)
 end)
 
@@ -24,6 +26,8 @@ table.insert(hyperlink_rules, {
 
 return {
   color_scheme = "GruvboxDark",
+  -- Highlight the cursor when the compose key is waiting for input
+  colors = { compose_cursor = "orange" },
   -- Why would a terminal making a noise be a good idea?
   audible_bell = "Disabled",
   -- While there is a bug in 20220624
