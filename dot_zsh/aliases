@@ -5,6 +5,9 @@ alias ..='cd ..'
 alias cdp='cd -P'
 alias pwd='pwd -P'
 
+# Open arbitrary files
+alias xo="xdg-open"
+
 # pipe all output to devnull
 alias -g NULL='>/dev/null 2>&1'
 
