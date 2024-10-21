@@ -19,7 +19,7 @@ alias psef='ps -ef|grep'
 # See the actual file path after following all links
 alias rf='readlink -f'
 
-alias tree='exa --tree --git-ignore'
+alias tree='eza --tree --git-ignore'
 
 alias cm='chezmoi'
 
