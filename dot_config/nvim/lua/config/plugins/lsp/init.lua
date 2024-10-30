@@ -48,6 +48,11 @@ function M.config()
       capabilities = caps,
    })
 
+   require("lspconfig")["dartls"].setup({
+      on_attach = on_attach,
+      capabilities = caps,
+   })
+
    require("lspconfig")["rust_analyzer"].setup({
       on_init = function(client, _)
          client.server_capabilities.semanticTokensProvider = nil -- turn off semantic tokens
