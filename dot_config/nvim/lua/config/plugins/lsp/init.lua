@@ -48,6 +48,7 @@ function M.config()
       capabilities = caps,
    })
 
+   require("lspconfig")["regal"].setup({})
    require("lspconfig")["dartls"].setup({
       on_attach = on_attach,
       capabilities = caps,
