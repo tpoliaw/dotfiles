@@ -1,2 +1,5 @@
 [registries.crates-io]
 protocol = "sparse"
+
+[build]
+rustc-wrapper = "/usr/bin/sccache"
