@@ -49,6 +49,7 @@ function M.config()
    })
 
    require("lspconfig")["regal"].setup({})
+   require("lspconfig")["ocamllsp"].setup({})
    require("lspconfig")["dartls"].setup({
       on_attach = on_attach,
       capabilities = caps,
