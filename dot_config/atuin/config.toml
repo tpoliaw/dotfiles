@@ -93,3 +93,6 @@ exit_mode = "return-original"
 
 [stats]
 common_subcommands = ["git", "cargo", "mvn"]
+
+[dotfiles]
+enabled = true
