@@ -186,4 +186,26 @@ return {
          })
       end,
    },
+   {
+      "saecki/crates.nvim",
+      tag = "stable",
+      opts = {
+         lsp = {
+            enabled = true,
+            on_attach = function(client, buffer)
+               opts = { silent = true }
+               crates = require("crates")
+               vim.keymap.set("n", "<c-k>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+               vim.keymap.set({ "n", "x" }, "<leader>1", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+               vim.keymap.set("n", "<leader>cf", crates.show_features_popup, opts)
+               vim.keymap.set("n", "<leader>cx", crates.expand_plain_crate_to_inline_table, opts)
+               vim.keymap.set("n", "<leader>cr", crates.open_repository, opts)
+               vim.keymap.set("n", "<leader>cd", crates.open_documentation, opts)
+            end,
+            actions = true,
+            completion = true,
+            hover = true,
+         },
+      },
+   },
 }
