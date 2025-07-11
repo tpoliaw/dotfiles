@@ -72,3 +72,8 @@ alias gw='./gradlew'
 function tm() {
     tmux -2 attach -t $@ || tmux -2 new -s $@
 }
+
+{{- if eq .chezmoi.username "qan22331" }}
+
+alias ws419='ssh -t ws419 zsh'
+{{- end }}
