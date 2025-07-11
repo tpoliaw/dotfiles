@@ -155,6 +155,9 @@ else
     echo "Install atuin"
 fi
 
+# Configure OCaml stuff
+eval $(opam env)
+
 #########################################################
 #                   Assorted functions                  #
 #########################################################
