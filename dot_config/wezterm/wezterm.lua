@@ -71,4 +71,83 @@ return {
     { key = "PageUp", mods = "CTRL", action = "DisableDefaultAssignment" },
     { key = "PageDown", mods = "CTRL", action = "DisableDefaultAssignment" },
   },
+  disable_default_mouse_bindings = true,
+  mouse_bindings = {
+    -- Double left click => select by word
+    {
+      event = { Down = { streak = 2, button = "Left" } },
+      mods = "NONE",
+      action = wezterm.action.SelectTextAtMouseCursor("Word"),
+    },
+    {
+      event = { Drag = { streak = 2, button = "Left" } },
+      mods = "NONE",
+      action = wezterm.action.ExtendSelectionToMouseCursor("Word"),
+    },
+    {
+      event = { Up = { streak = 2, button = "Left" } },
+      mods = "NONE",
+      action = wezterm.action({ CompleteSelectionOrOpenLinkAtMouseCursor = "PrimarySelection" }),
+    },
+
+    -- Single left click => select by cell
+    {
+      event = { Down = { streak = 1, button = "Left" } },
+      mods = "NONE",
+      action = wezterm.action.SelectTextAtMouseCursor("Cell"),
+    },
+    {
+      event = { Drag = { streak = 1, button = "Left" } },
+      mods = "CTRL",
+      action = wezterm.action.ExtendSelectionToMouseCursor("Cell"),
+    },
+    {
+      event = { Up = { streak = 1, button = "Left" } },
+      mods = "CTRL",
+      action = wezterm.action({ CompleteSelectionOrOpenLinkAtMouseCursor = "PrimarySelection" }),
+    },
+
+    -- Single right click => clear selection
+    {
+      event = { Down = { streak = 1, button = "Right" } },
+      mods = "NONE",
+      action = wezterm.action.ClearSelection,
+    },
+
+    -- Middle click paste support
+    {
+      event = { Down = { streak = 1, button = "Middle" } },
+      mods = "NONE",
+      action = wezterm.action.PasteFrom("PrimarySelection"),
+    },
+    -- Scroll wheel support
+    -- {
+    --   event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+    --   mods = "NONE",
+    --   mouse_reporting = Any,
+    --   alt_screen = true,
+    --   action = wezterm.action.ScrollByCurrentEventWheelDelta,
+    -- },
+    -- {
+    --   event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+    --   mods = "NONE",
+    --   -- mouse_reporting = true,
+    --   alt_screen = true,
+    --   action = wezterm.action.ScrollByCurrentEventWheelDelta,
+    -- },
+    {
+      event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+      mods = "NONE",
+      mouse_reporting = false,
+      alt_screen = false,
+      action = wezterm.action.ScrollByCurrentEventWheelDelta,
+    },
+    {
+      event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+      mods = "NONE",
+      mouse_reporting = false,
+      alt_screen = false,
+      action = wezterm.action.ScrollByCurrentEventWheelDelta,
+    },
+  },
 }
