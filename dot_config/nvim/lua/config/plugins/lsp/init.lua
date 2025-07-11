@@ -78,7 +78,7 @@ function M.config()
                },
             },
          },
-      }
+      },
    })
 end
 
