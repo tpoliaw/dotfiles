@@ -78,13 +78,14 @@ return {
    "sainnhe/gruvbox-material",
    -- fuzzy finding
    {
-      "junegunn/fzf.vim",
-      dependencies = {
-         "junegunn/fzf",
-      },
+      "ibhagwan/fzf-lua",
+      dependencies = { "nvim-tree/nvim-web-devicons" },
       config = function()
-         vim.keymap.set("n", "<leader>e", ":Files<CR>", { silent = true })
-         vim.keymap.set("n", "<leader>b", ":Buffers<CR>", { silent = true })
+         require("fzf-lua").setup({})
+         vim.keymap.set("n", "<leader>e", ":FzfLua files<CR>", { silent = true })
+         vim.keymap.set("n", "<leader>b", ":FzfLua buffers<CR>", { silent = true })
+         vim.keymap.set("n", "<leader>l", ":FzfLua lines<CR>", { silent = true })
+         vim.keymap.set("n", "<leader>t", ":FzfLua lsp_workspace_symbols<CR>", { silent = true })
       end,
    },
    {
