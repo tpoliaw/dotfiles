@@ -54,7 +54,6 @@ function M.config()
          { name = "buffer", keyword_length = 5 },
          { name = "path" },
          { name = "emoji" },
-         { name = "neorg" },
       }),
       formatting = {
          format = require("config.plugins.lsp.kind").cmp_format(),

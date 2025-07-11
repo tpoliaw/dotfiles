@@ -23,9 +23,6 @@ return {
             },
          })
       end,
-      dependencies = {
-         "nvim-neorg/neorg",
-      },
    },
    -- Hop but by treesitter nodes
    {
