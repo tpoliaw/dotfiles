@@ -11,13 +11,17 @@ function M.config()
    vim.diagnostic.config({
       underline = true,
       update_in_insert = false,
-      virtual_text = { spacing = 4, prefix = "●" },
+      virtual_text = { spacing = 4, prefix = "● " },
       severity_sort = true,
+      signs = {
+         text = {
+            [vim.diagnostic.severity.ERROR] = "✗ ",
+            [vim.diagnostic.severity.WARN] = "? ",
+            [vim.diagnostic.severity.HINT] = "",
+            [vim.diagnostic.severity.INFO] = " ",
+         }
+      }
    })
-   for type, icon in pairs({ Error = " ", Warn = " ", Hint = " ", Info = " " }) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-   end
    vim.keymap.set("n", "<leader>[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
    vim.keymap.set("n", "<leader>]", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 
