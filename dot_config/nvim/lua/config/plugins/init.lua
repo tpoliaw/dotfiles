@@ -209,4 +209,26 @@ return {
          },
       },
    },
+   {
+      -- provide popup blame/commit viewer
+      "rhysd/git-messenger.vim",
+   },
+   {
+      -- Enable optional inlay decoration for blame
+      "FabijanZulj/blame.nvim",
+      lazy = false,
+      config = function()
+         require("blame").setup()
+         vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle virtual<CR>", {silent = true})
+         vim.keymap.set("n", "<leader>gB", "<cmd>BlameToggle window<CR>", {silent = true})
+      end,
+   },
+   {
+      -- Add markers to the gutter for diffs/changes + add commands to reset lines etc
+      "lewis6991/gitsigns.nvim",
+      opts = {
+         -- Try and get the diff markers to take priority over warnings
+         sign_priority = 11
+      }
+   }
 }
