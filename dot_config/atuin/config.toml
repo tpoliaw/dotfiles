@@ -92,7 +92,15 @@ exit_mode = "return-original"
 # ]
 
 [stats]
-common_subcommands = ["git", "cargo", "mvn"]
+# Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
+common_subcommands = [
+ "cargo",
+ "go",
+ "git",
+]
+
+# Set commands that should be totally stripped and ignored from stats
+common_prefix = ["sudo"]
 
 [dotfiles]
 enabled = true
