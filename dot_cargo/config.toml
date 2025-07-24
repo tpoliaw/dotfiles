@@ -3,3 +3,6 @@ protocol = "sparse"
 
 [build]
 rustc-wrapper = "/usr/bin/sccache"
+
+[alias]
+docs = "doc"
