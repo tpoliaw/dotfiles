@@ -22,6 +22,9 @@ zlog:*log.gz
 --type-add
 git:.gitignore
 
+--type-add
+rcp:{*.product,*.feature}
+
 --hidden
 
 --glob
