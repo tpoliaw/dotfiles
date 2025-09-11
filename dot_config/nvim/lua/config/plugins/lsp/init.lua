@@ -46,10 +46,21 @@ function M.config()
       dynamicRegistration = true,
       lineFoldingOnly = true,
    }
+   caps.offsetEncoding = { 'utf-16' }
+   caps.general = { positionEncodings = { 'utf-16' } }
 
    require("lspconfig")["pyright"].setup({
       on_attach = on_attach,
       capabilities = caps,
+   })
+   require("lspconfig")["ruff"].setup({
+      on_attach = on_attach,
+      capabilities = caps,
+      -- init_options = {
+      --    settings = {
+      --       -- ruff config
+      --    }
+      -- }
    })
 
    require("lspconfig")["regal"].setup({})
