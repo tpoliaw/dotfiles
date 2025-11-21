@@ -49,28 +49,31 @@ function M.config()
    caps.offsetEncoding = { 'utf-16' }
    caps.general = { positionEncodings = { 'utf-16' } }
 
-   require("lspconfig")["pyright"].setup({
+   vim.lsp.enable("pyright")
+   vim.lsp.config("pyright", {
       on_attach = on_attach,
       capabilities = caps,
    })
-   require("lspconfig")["ruff"].setup({
-      on_attach = on_attach,
-      capabilities = caps,
-      -- init_options = {
-      --    settings = {
-      --       -- ruff config
-      --    }
-      -- }
-   })
-
-   require("lspconfig")["regal"].setup({})
-   require("lspconfig")["ocamllsp"].setup({})
-   require("lspconfig")["dartls"].setup({
+   vim.lsp.enable("ruff")
+   vim.lsp.config("ruff", {
       on_attach = on_attach,
       capabilities = caps,
    })
 
-   require("lspconfig")["rust_analyzer"].setup({
+   vim.lsp.enable("regal")
+   vim.lsp.config("regal", {})
+
+   vim.lsp.enable("ocamllsp")
+   vim.lsp.config("ocamllsp", {})
+
+   vim.lsp.enable("dartls")
+   vim.lsp.config("dartls", {
+      on_attach = on_attach,
+      capabilities = caps,
+   })
+
+   vim.lsp.enable("rust_analyzer")
+   vim.lsp.config("rust_analyzer", {
       on_init = function(client, _)
          client.server_capabilities.semanticTokensProvider = nil -- turn off semantic tokens
       end,
