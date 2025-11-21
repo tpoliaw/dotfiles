@@ -82,6 +82,7 @@ return {
       dependencies = { "nvim-tree/nvim-web-devicons" },
       config = function()
          require("fzf-lua").setup({})
+         vim.keymap.set({"n", "x"}, "<leader>1", ":FzfLua lsp_code_actions silent=true<CR>", { silent = true })
          vim.keymap.set("n", "<leader>e", ":FzfLua files<CR>", { silent = true })
          vim.keymap.set("n", "<leader>b", ":FzfLua buffers<CR>", { silent = true })
          vim.keymap.set("n", "<leader>l", ":FzfLua lines<CR>", { silent = true })
