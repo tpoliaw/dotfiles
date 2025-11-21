@@ -161,10 +161,6 @@ return {
       opts = {}, -- this is equalent to setup({}) function
    },
    {
-      "nacro90/numb.nvim",
-      config = true,
-   },
-   {
       "kevinhwang91/nvim-ufo",
       dependencies = {
          "kevinhwang91/promise-async",
