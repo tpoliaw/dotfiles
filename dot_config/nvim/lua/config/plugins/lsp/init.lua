@@ -89,7 +89,7 @@ function M.config()
       settings = {
          ["rust-analyzer"] = {
             rustfmt = {
-               extraArgs = { "+nightly", "--target-dir", "target/analyzer" },
+               extraArgs = { "+nightly" },
                rangeFormatting = {
                   enable = true,
                },
