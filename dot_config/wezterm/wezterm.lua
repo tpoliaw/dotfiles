@@ -70,6 +70,21 @@ return {
     -- Default in wezterm is switch tabs which I don't use
     { key = "PageUp", mods = "CTRL", action = "DisableDefaultAssignment" },
     { key = "PageDown", mods = "CTRL", action = "DisableDefaultAssignment" },
+    {
+      key = 'P',
+      mods = 'CTRL',
+      action = wezterm.action.QuickSelectArgs {
+        label = 'open url',
+        patterns = {
+          'https?://\\S+',
+        },
+        action = wezterm.action_callback(function(window, pane)
+          local url = window:get_selection_text_for_pane(pane)
+          wezterm.log_info('opening: ' .. url)
+          wezterm.open_with(url)
+        end),
+      },
+    }
   },
   disable_default_mouse_bindings = true,
   mouse_bindings = {
