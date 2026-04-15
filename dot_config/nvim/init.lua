@@ -21,6 +21,22 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
    callback = restore_cursor,
 })
 
+-- Prevent the cursor line being reset to the middle of the screen when the buffer changes
+local scroll_group = vim.api.nvim_create_augroup("scroll_group", {})
+vim.api.nvim_create_autocmd("BufWinLeave", {
+   group = scroll_group,
+   callback = function() vim.b.winline = vim.fn.winsaveview().topline end
+})
+vim.api.nvim_create_autocmd("BufWinEnter", {
+   group = scroll_group,
+   callback = function()
+      if vim.b.winline ~= nil then
+         vim.fn.winrestview({ topline = vim.b.winline })
+         vim.b.winline = nil
+      end
+   end
+})
+
 -- Don't wrap long lines
 vim.opt.wrap = false
 -- Set width for autoformatting text. Mainly useful for reflowing comments
