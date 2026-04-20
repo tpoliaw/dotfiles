@@ -86,7 +86,7 @@ return {
          vim.keymap.set("n", "<leader>e", ":FzfLua files<CR>", { silent = true })
          vim.keymap.set("n", "<leader>b", ":FzfLua buffers<CR>", { silent = true })
          vim.keymap.set("n", "<leader>l", ":FzfLua lines<CR>", { silent = true })
-         vim.keymap.set("n", "<leader>t", ":FzfLua lsp_workspace_symbols<CR>", { silent = true })
+         vim.keymap.set("n", "<leader>t", ":FzfLua lsp_live_workspace_symbols<CR>", { silent = true })
       end,
    },
    {
