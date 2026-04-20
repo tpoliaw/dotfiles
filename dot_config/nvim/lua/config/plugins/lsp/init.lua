@@ -89,7 +89,7 @@ function M.config()
       cargo = { allFeatures = true },
       checkOnSave = {
          command = "clippy",
-         extraArgs = { "--no-deps" },
+         extraArgs = { "--no-deps", "--target-dir", "target/analyzer" },
       },
       settings = {
          ["rust-analyzer"] = {
