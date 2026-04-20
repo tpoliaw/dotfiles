@@ -70,6 +70,11 @@ function M.config()
       on_attach = on_attach,
       capabilities = caps,
    })
+   vim.lsp.enable("tombi")
+   vim.lsp.config("tombi", {
+      on_attach = on_attach,
+      capabilities = caps,
+   })
 
    vim.lsp.enable("rust_analyzer")
    vim.lsp.config("rust_analyzer", {
