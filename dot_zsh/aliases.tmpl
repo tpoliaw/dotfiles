@@ -56,8 +56,13 @@ function find_commit() {
     |cut -d ' ' -f 1
 }
 
+function find_stash() {
+    git stash list | sk --preview 'git show --color=always -p {1}' --delimiter ':' --nth 1 | cut -d ':' -f 1
+}
+
 alias -g COM='${$(find_commit):?aborted}'
 alias -g GHP='--not origin/gh-pages'
+alias -g STA='${$(find_stash):?aborted}'
 
 # Cargo
 alias cr='cargo run'
