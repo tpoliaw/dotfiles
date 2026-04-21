@@ -83,6 +83,12 @@ function M.config()
       capabilities = caps,
    })
 
+   vim.lsp.enable("stylua")
+   vim.lsp.config("stylua", {
+      on_attach = on_attach,
+      capabilities = caps,
+   })
+
    vim.lsp.enable("rust_analyzer")
    vim.lsp.config("rust_analyzer", {
       on_init = function(client, _)
