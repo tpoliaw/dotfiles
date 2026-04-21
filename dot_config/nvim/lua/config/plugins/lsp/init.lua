@@ -70,8 +70,15 @@ function M.config()
       on_attach = on_attach,
       capabilities = caps,
    })
+
    vim.lsp.enable("tombi")
    vim.lsp.config("tombi", {
+      on_attach = on_attach,
+      capabilities = caps,
+   })
+
+   vim.lsp.enable("just")
+   vim.lsp.config("just", {
       on_attach = on_attach,
       capabilities = caps,
    })
