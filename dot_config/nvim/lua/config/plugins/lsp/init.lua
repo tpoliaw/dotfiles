@@ -19,8 +19,8 @@ function M.config()
             [vim.diagnostic.severity.WARN] = "? ",
             [vim.diagnostic.severity.HINT] = "",
             [vim.diagnostic.severity.INFO] = " ",
-         }
-      }
+         },
+      },
    })
    vim.keymap.set("n", "<leader>[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
    vim.keymap.set("n", "<leader>]", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
@@ -45,8 +45,8 @@ function M.config()
       dynamicRegistration = true,
       lineFoldingOnly = true,
    }
-   caps.offsetEncoding = { 'utf-16' }
-   caps.general = { positionEncodings = { 'utf-16' } }
+   caps.offsetEncoding = { "utf-16" }
+   caps.general = { positionEncodings = { "utf-16" } }
 
    vim.lsp.enable("pyright")
    vim.lsp.config("pyright", {

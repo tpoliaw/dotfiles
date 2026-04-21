@@ -25,7 +25,9 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 local scroll_group = vim.api.nvim_create_augroup("scroll_group", {})
 vim.api.nvim_create_autocmd("BufWinLeave", {
    group = scroll_group,
-   callback = function() vim.b.winline = vim.fn.winsaveview().topline end
+   callback = function()
+      vim.b.winline = vim.fn.winsaveview().topline
+   end,
 })
 vim.api.nvim_create_autocmd("BufWinEnter", {
    group = scroll_group,
@@ -34,7 +36,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
          vim.fn.winrestview({ topline = vim.b.winline })
          vim.b.winline = nil
       end
-   end
+   end,
 })
 
 -- Don't wrap long lines
@@ -143,8 +145,8 @@ vim.g.gruvbox_material_palette = "original"
 require("config.lazy")
 vim.cmd([[colorscheme gruvbox-material]])
 
-vim.api.nvim_set_hl(0, "LineNrAbove", { fg="#52561a" })
-vim.api.nvim_set_hl(0, "LineNrBelow", { fg="#8a3236" })
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#52561a" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#8a3236" })
 
 vim.api.nvim_create_autocmd("FileType", {
    pattern = { "python", "rust", "markdown", "java", "lua", "toml", "yaml", "html" },

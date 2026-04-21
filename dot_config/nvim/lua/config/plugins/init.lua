@@ -90,9 +90,9 @@ return {
             },
             lsp_live_workspace_symbols = {
                no_action_zz = true,
-            }
+            },
          })
-         vim.keymap.set({"n", "x"}, "<leader>1", ":FzfLua lsp_code_actions silent=true<CR>", { silent = true })
+         vim.keymap.set({ "n", "x" }, "<leader>1", ":FzfLua lsp_code_actions silent=true<CR>", { silent = true })
          vim.keymap.set("n", "<leader>e", ":FzfLua files<CR>", { silent = true })
          vim.keymap.set("n", "<leader>b", ":FzfLua buffers<CR>", { silent = true })
          vim.keymap.set("n", "<leader>l", ":FzfLua lines<CR>", { silent = true })
@@ -226,8 +226,8 @@ return {
       lazy = false,
       config = function()
          require("blame").setup()
-         vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle virtual<CR>", {silent = true})
-         vim.keymap.set("n", "<leader>gB", "<cmd>BlameToggle window<CR>", {silent = true})
+         vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle virtual<CR>", { silent = true })
+         vim.keymap.set("n", "<leader>gB", "<cmd>BlameToggle window<CR>", { silent = true })
       end,
    },
    {
@@ -235,7 +235,7 @@ return {
       "lewis6991/gitsigns.nvim",
       opts = {
          -- Try and get the diff markers to take priority over warnings
-         sign_priority = 11
-      }
-   }
+         sign_priority = 11,
+      },
+   },
 }
