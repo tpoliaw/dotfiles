@@ -81,7 +81,17 @@ return {
       "ibhagwan/fzf-lua",
       dependencies = { "nvim-tree/nvim-web-devicons" },
       config = function()
-         require("fzf-lua").setup({})
+         require("fzf-lua").setup({
+            buffers = {
+               no_action_zz = true,
+            },
+            files = {
+               no_action_zz = true,
+            },
+            lsp_live_workspace_symbols = {
+               no_action_zz = true,
+            }
+         })
          vim.keymap.set({"n", "x"}, "<leader>1", ":FzfLua lsp_code_actions silent=true<CR>", { silent = true })
          vim.keymap.set("n", "<leader>e", ":FzfLua files<CR>", { silent = true })
          vim.keymap.set("n", "<leader>b", ":FzfLua buffers<CR>", { silent = true })
