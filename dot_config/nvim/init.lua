@@ -145,3 +145,10 @@ vim.cmd([[colorscheme gruvbox-material]])
 
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg="#52561a" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg="#8a3236" })
+
+vim.api.nvim_create_autocmd("FileType", {
+   pattern = { "python", "rust", "markdown", "java", "lua", "toml", "yaml", "html" },
+   callback = function()
+      vim.treesitter.start()
+   end,
+})
