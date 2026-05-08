@@ -29,15 +29,7 @@ return {
          },
       },
    },
-   -- Jump around text
-   {
-      "phaazon/hop.nvim",
-      config = true,
-      init = function()
-         vim.keymap.set("n", "<leader>f", require("hop").hint_char1, { silent = true })
-      end,
-   },
-   -- -- Highlight jump characters for f/F/t/T
+   -- Highlight jump characters for f/F/t/T
    "unblevable/quick-scope",
    -- Macroeditor in splitscreen
    "dohsimpson/vim-macroeditor",
@@ -61,18 +53,6 @@ return {
          vim.keymap.set("n", "<leader>j", "<plug>SplitjoinSplit", { silent = true })
          vim.keymap.set("n", "<leader>k", "<plug>SplitjoinJoin", { silent = true })
       end,
-   },
-   -- Outliner/tree
-   {
-      "phaazon/mind.nvim",
-      opts = {
-         edit = {
-            data_extension = ".norg",
-            data_header = "* %s",
-         },
-      },
-      cmd = "MindOpenMain",
-      dependencies = "nvim-lua/plenary.nvim",
    },
    -- Colorscheme
    "sainnhe/gruvbox-material",
