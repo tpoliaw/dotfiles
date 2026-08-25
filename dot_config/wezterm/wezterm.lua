@@ -32,7 +32,6 @@ return {
   audible_bell = "Disabled",
   -- While there is a bug in 20220624
   check_for_updates = false,
-  show_update_window = false,
   font = wezterm.font_with_fallback({
     "Iosevka SS14",
     "Iosevka Nerd Font Mono",
